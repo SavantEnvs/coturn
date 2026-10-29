@@ -1,0 +1,10 @@
+project: savantenvs/coturn
+target: FuzzStunClient
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/FuzzStunClient/testsuite
+cmds:
+  - cmd: /mayhem/FuzzStunClient
+    libfuzzer: true
+    dictionary: /mayhem/fuzzing/stun.dict
+    timeout: 10

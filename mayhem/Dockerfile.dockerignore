@@ -1,0 +1,10 @@
+# Per-Dockerfile ignore for `docker build -f mayhem/Dockerfile .` (BuildKit gives it precedence over
+# upstream's root .dockerignore, which whitelists only a deployment subset and would strip the tests/,
+# fuzzing/ and .git the commit image needs). Keep .git: the grader uses the history.
+build/
+*.o
+*.a
+*.so
+.DS_Store
+*.swp
+*~
